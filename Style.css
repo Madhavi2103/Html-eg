@@ -1,0 +1,9 @@
+/* External style sheet */
+h1{
+    color: fuchsia;
+    text-align: center;
+}
+p{
+    font-size: 16px;
+    color: brown;
+}
