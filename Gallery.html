@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grid Photo Gallery</title>
+
+    <style>
+
+        /* Page Styling */
+
+        body {
+            font-family: Arial, sans-serif;
+
+            /* Pleasant unique background */
+            background: linear-gradient(135deg, #b2bbef, #9cd0fe);
+
+            margin: 0;
+            padding: 40px;
+
+            text-align: center;
+
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+
+            color: #303f6f;
+
+            font-size: 36px;
+        }
+
+
+        /* =========================
+           GRID LAYOUT
+        ========================= */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-rows: repeat(2, 250px);
+
+            gap: 20px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           PHOTO BOX
+        ========================= */
+
+        .photo {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+
+            box-shadow: 0 6px 15px rgba(48, 63, 111, 0.25);
+
+            background-color: white;
+        }
+
+
+        /* =========================
+           IMAGE
+        ========================= */
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+
+        /* =========================
+           HOVER EFFECT
+        ========================= */
+
+        .photo:hover img {
+            transform: scale(1.15);
+        }
+
+
+        /* =========================
+           TEXT OVERLAY
+        ========================= */
+
+        .caption {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 15px 0;
+
+            background-color: rgba(48, 63, 111, 0.75);
+
+            color: white;
+
+            font-size: 20px;
+
+            opacity: 0;
+
+            transition: opacity 0.4s ease;
+        }
+
+
+        /* Show caption when hovering */
+
+        .photo:hover .caption {
+            opacity: 1;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+
+                grid-template-rows: repeat(3, 200px);
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .gallery {
+                grid-template-columns: 1fr;
+
+                grid-template-rows: repeat(6, 220px);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <h1>My Photo Gallery</h1>
+
+
+    <!-- Grid Container -->
+
+    <div class="gallery">
+
+
+        <!-- Photo 1 -->
+
+        <div class="photo">
+
+            <img src="nature.avif" alt="Nature">
+
+            <div class="caption">
+                Nature
+            </div>
+
+        </div>
+
+
+        <!-- Photo 2 -->
+
+        <div class="photo">
+
+            <img src="travel.jpeg" alt="Travel">
+
+            <div class="caption">
+                Travel
+            </div>
+
+        </div>
+
+
+        <!-- Photo 3 -->
+
+        <div class="photo">
+
+            <img src="beach.jpg" alt="Beach">
+
+            <div class="caption">
+                Beach
+            </div>
+
+        </div>
+
+
+        <!-- Photo 4 -->
+
+        <div class="photo">
+
+            <img src="sunset.jpg" alt="Sunset">
+
+            <div class="caption">
+                Sunset
+            </div>
+
+        </div>
+
+
+        <!-- Photo 5 -->
+
+        <div class="photo">
+
+            <img src="flowers.jpg" alt="Flowers">
+
+            <div class="caption">
+                Flowers
+            </div>
+
+        </div>
+
+
+        <!-- Photo 6 -->
+
+        <div class="photo">
+
+            <img src="city.jpg" alt="City">
+
+            <div class="caption">
+                City
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
